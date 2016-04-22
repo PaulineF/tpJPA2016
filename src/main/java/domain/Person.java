@@ -17,10 +17,7 @@ public class Person {
 	private String mail;
 	private Collection<Home> homes = new ArrayList<Home>();
 
-	public Person() {
-	}
-
-
+	public Person() {	}
 	public Person(String firstName, String lastName, String mail) {
 		super();
 		this.firstName = firstName;
@@ -29,53 +26,39 @@ public class Person {
 	}
 	
 	@Id
-    @GeneratedValue
+    	@GeneratedValue
 	public long getId() {
 		return id;
 	}
-
-
 	public void setId(long id) {
 		this.id = id;
 	}
-	
 	public String getFirstName() {
 		return firstName;
 	}
-	
-	
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-	
 	public String getLastName() {
 		return lastName;
 	}
-	
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	
 	public String getMail() {
 		return mail;
 	}
-	
 	public void setMail(String mail) {
 		this.mail = mail;
 	}
-	
 	@ManyToMany(mappedBy="persons")
 	public Collection<Home> getHomes() {
 		return homes;
 	}
-	
 	public void setHomes(Collection<Home> homes) {
 		this.homes = homes;
 	}
-	
 	public String toString(){
 		return firstName + " " + lastName + " : " +mail;
 	}
-	
-	
 }
